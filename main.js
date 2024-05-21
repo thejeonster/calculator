@@ -35,3 +35,19 @@ let addNum = (x, y) => x + y;
 let subNum = (x, y) => x - y;
 let mulNum = (x, y) => x * y; 
 let divNum = (x, y) => x / y; 
+
+let numOne 
+let numTwo
+let operator 
+
+let operate = (operator, numOne, numTwo) => {
+    if (operator == "add") {
+        return addNum(numOne, numTwo);
+    } else if (operator == "subtract") {
+        return subNum(numOne, numTwo);
+    } else if (operator == "multiple") {
+        return mulNum(numOne, numTwo);
+    } else if (operator == "divide") {
+        return divNum(numOne, numTwo); 
+    }
+}
