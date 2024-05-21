@@ -28,3 +28,10 @@ resultShell.style.marginTop = "30px";
 resultShell.style.border = "1px solid black"; 
 
 calcShell.appendChild(resultShell);
+
+// ----- Add, Subtract, Multiply, Divide Functions ----- // 
+
+let addNum = (x, y) => x + y; 
+let subNum = (x, y) => x - y;
+let mulNum = (x, y) => x * y; 
+let divNum = (x, y) => x / y; 
