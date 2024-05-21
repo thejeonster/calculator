@@ -8,9 +8,10 @@ document.body.style.flexDirection = "column";
 // ----- The Calculator's Skeleton ----- // 
 
 const calcShell = document.createElement("div");
-calcShell.classList.add = "calcShell"; 
+calcShell.classList.add("calcShell");
 calcShell.style.display = "flex";
-calcShell.style.height = "450px";
+calcShell.style.flexDirection = "column";
+calcShell.style.height = "500px";
 calcShell.style.width = "300px"; 
 calcShell.style.border = "1px solid black";
 
@@ -19,7 +20,7 @@ document.body.appendChild(calcShell);
 // ----- Display For Results ----- // 
 
 const resultShell = document.createElement("div");
-resultShell.classList.add = "resultShell"; 
+resultShell.classList.add("resultShell");
 resultShell.style.height = "75px";
 resultShell.style.width = "240px";
 resultShell.style.marginLeft = "auto";
@@ -28,6 +29,21 @@ resultShell.style.marginTop = "30px";
 resultShell.style.border = "1px solid black"; 
 
 calcShell.appendChild(resultShell);
+
+// ----- Buttons For 0 to 9 ----- // 
+
+const numShell = document.createElement("div"); 
+numShell.classList.add("numShell")
+numShell.style.height = "200px";
+calcShell.appendChild(numShell); 
+
+function makeNumBtns(numBtns) {
+    for (i = 0; i < numBtns; i++) {
+        let numberBtn = document.createElement("button");
+        numberBtn.textContent = `${i}`; 
+        numShell.appendChild(numberBtn); 
+    }
+} makeNumBtns(10)
 
 // ----- Add, Subtract, Multiply, Divide Functions ----- // 
 
