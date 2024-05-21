@@ -34,12 +34,19 @@ calcShell.appendChild(resultShell);
 
 const numShell = document.createElement("div"); 
 numShell.classList.add("numShell")
+numShell.style.display = "flex"; 
 numShell.style.height = "200px";
 calcShell.appendChild(numShell); 
+
+const oneToThree = document.createElement("div");
+const fourToSix = document.createElement("div");
+const sevenToNine = document.createElement("div");
 
 function makeNumBtns(numBtns) {
     for (i = 0; i < numBtns; i++) {
         let numberBtn = document.createElement("button");
+        numberBtn.style.height = "45px";
+        numberBtn.style.width = "45px";
         numberBtn.textContent = `${i}`; 
         numShell.appendChild(numberBtn); 
     }
