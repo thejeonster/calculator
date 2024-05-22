@@ -32,23 +32,47 @@ calcShell.appendChild(resultShell);
 
 // ----- Buttons For 0 to 9 ----- // 
 
+const numSpacer = document.createElement("div");
+numSpacer.style.height = "50px";
+calcShell.appendChild(numSpacer);
+
 const numShell = document.createElement("div"); 
 numShell.classList.add("numShell")
 numShell.style.display = "flex"; 
+numShell.style.flexDirection = "column"
+numShell.style.justifyContent = "space-around";
 numShell.style.height = "200px";
 calcShell.appendChild(numShell); 
 
-const oneToThree = document.createElement("div");
-const fourToSix = document.createElement("div");
 const sevenToNine = document.createElement("div");
+sevenToNine.style.order = "1"
+const fourToSix = document.createElement("div");
+fourToSix.style.order = "2"
+const oneToThree = document.createElement("div");
+oneToThree.style.order = "3"
+const zero = document.createElement("div");
+zero.style.order = "4";
+
+const digitArr = [oneToThree, fourToSix, sevenToNine];
+const mapDigitArr = digitArr.map((num) => {
+    num.style.justifyContent = "space-around";
+    numShell.appendChild(num)}); 
 
 function makeNumBtns(numBtns) {
     for (i = 0; i < numBtns; i++) {
+        
         let numberBtn = document.createElement("button");
-        numberBtn.style.height = "45px";
-        numberBtn.style.width = "45px";
+        numberBtn.style.height = "55px";
+        numberBtn.style.width = "55px";
         numberBtn.textContent = `${i}`; 
-        numShell.appendChild(numberBtn); 
+
+        if (1 <= i && i <= 3) {
+            oneToThree.appendChild(numberBtn);
+        } else if (4 <= i && i <= 6) {
+            fourToSix.appendChild(numberBtn);
+        } else if (7 <= i && i <= 9) {
+            sevenToNine.appendChild(numberBtn); 
+        }
     }
 } makeNumBtns(10)
 
