@@ -53,6 +53,7 @@ oneToThree.style.order = "3"
 const zero = document.createElement("div");
 zero.style.order = "4";
 
+
 const digitArr = [oneToThree, fourToSix, sevenToNine];
 const mapDigitArr = digitArr.map((num) => {
     num.style.justifyContent = "space-around";
@@ -75,6 +76,38 @@ function makeNumBtns(numBtns) {
         }
     }
 } makeNumBtns(10)
+
+// ----- Buttons For Operations & Equal ----- // 
+
+let operKey = {
+    plusBtn: "+",
+    subBtn: "-",
+    multBtn: "x",
+    divBtn: "/",
+};
+
+// Is there a way to use an object to assign text content to each button? // 
+
+const operContainer = document.createElement("div");
+operContainer.style.order = "5";
+
+const plusBtn = document.createElement("button");
+const subBtn = document.createElement("button");
+const multBtn = document.createElement("button");
+const divBtn = document.createElement("button"); 
+const opBtnArr = [plusBtn, subBtn, multBtn, divBtn];
+
+
+const mapOpBtn = opBtnArr.map((oper) => {
+    for (i = 0; i < opBtnArr.length; i++) {
+        opBtnArr[i].style.height = "55px";
+        opBtnArr[i].style.width = "55px";
+        operContainer.appendChild(opBtnArr[i]); 
+    }
+}) 
+
+
+numShell.appendChild(operContainer);
 
 // ----- Add, Subtract, Multiply, Divide Functions ----- // 
 
