@@ -79,12 +79,7 @@ function makeNumBtns(numBtns) {
 
 // ----- Buttons For Operations & Equal ----- // 
 
-let operKey = {
-    plusBtn: "+",
-    subBtn: "-",
-    multBtn: "x",
-    divBtn: "/",
-};
+let opArr = ["+", "-", "x", "/", "c"];
 
 // Is there a way to use an object to assign text content to each button? // 
 
@@ -95,13 +90,15 @@ const plusBtn = document.createElement("button");
 const subBtn = document.createElement("button");
 const multBtn = document.createElement("button");
 const divBtn = document.createElement("button"); 
-const opBtnArr = [plusBtn, subBtn, multBtn, divBtn];
+const clrBtn = document.createElement("button"); 
+const opBtnArr = [plusBtn, subBtn, multBtn, divBtn, clrBtn];
 
 
 const mapOpBtn = opBtnArr.map((oper) => {
     for (i = 0; i < opBtnArr.length; i++) {
         opBtnArr[i].style.height = "55px";
         opBtnArr[i].style.width = "55px";
+        opBtnArr[i].textContent = `${opArr[i]}`;
         operContainer.appendChild(opBtnArr[i]); 
     }
 }) 
