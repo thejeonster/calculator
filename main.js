@@ -83,7 +83,7 @@ function makeNumBtns(numBtns) {
         // ----- Click Event For Number Buttons ----- //
 
         numberBtn.addEventListener("click", () => {
-            resultShell.textContent = `${numberBtn.textContent}`;
+            resultShell.textContent = resultShell.textContent + `${numberBtn.textContent}`;
         })
     }
 } makeNumBtns(10)
@@ -114,8 +114,13 @@ const mapOpBtn = opBtnArr.map((oper) => {
     }
 }) 
 
-
 numShell.appendChild(operContainer);
+
+// ----- Click Events For Operations ----- // 
+
+clrBtn.addEventListener("click", () => {
+    resultShell.textContent = ''; 
+}); 
 
 // ----- Add, Subtract, Multiply, Divide Functions ----- // 
 
