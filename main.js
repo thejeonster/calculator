@@ -18,6 +18,8 @@ calcShell.style.border = "1px solid black";
 document.body.appendChild(calcShell);
 
 // ----- Display For Results ----- // 
+let x;
+let y; 
 
 const resultShell = document.createElement("div");
 resultShell.classList.add("resultShell");
@@ -68,12 +70,21 @@ function makeNumBtns(numBtns) {
         numberBtn.textContent = `${i}`; 
 
         if (1 <= i && i <= 3) {
+            numberBtn.classList.add("oneThree");
             oneToThree.appendChild(numberBtn);
         } else if (4 <= i && i <= 6) {
+            numberBtn.classList.add("fourSix");
             fourToSix.appendChild(numberBtn);
         } else if (7 <= i && i <= 9) {
+            numberBtn.classList.add("sevenNine");
             sevenToNine.appendChild(numberBtn); 
         }
+
+        // ----- Click Event For Number Buttons ----- //
+
+        numberBtn.addEventListener("click", () => {
+            resultShell.textContent = `${numberBtn.textContent}`;
+        })
     }
 } makeNumBtns(10)
 
