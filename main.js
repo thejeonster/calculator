@@ -19,10 +19,10 @@ document.body.appendChild(calcShell);
 
 // ----- Display For Results ----- // 
 let x;
-let y; 
 
 const resultShell = document.createElement("div");
 resultShell.classList.add("resultShell");
+resultShell.style.display = "flex";
 resultShell.style.height = "75px";
 resultShell.style.width = "240px";
 resultShell.style.marginLeft = "auto";
@@ -31,6 +31,14 @@ resultShell.style.marginTop = "30px";
 resultShell.style.border = "1px solid black"; 
 
 calcShell.appendChild(resultShell);
+
+const subDisplayShell = document.createElement("div");
+subDisplayShell.classList.add("subDisplayShell");
+subDisplayShell.style.height = "25px";
+subDisplayShell.style.width = "240px";
+subDisplayShell.style.border = "1px solid black";
+
+resultShell.appendChild(subDisplayShell);
 
 // ----- Buttons For 0 to 9 ----- // 
 
@@ -81,12 +89,13 @@ function makeNumBtns(numBtns) {
         }
 
         // ----- Click Event For Number Buttons ----- //
-
         numberBtn.addEventListener("click", () => {
             resultShell.textContent = resultShell.textContent + `${numberBtn.textContent}`;
         })
     }
 } makeNumBtns(10)
+
+
 
 // ----- Buttons For Operations & Equal ----- // 
 
@@ -118,9 +127,32 @@ numShell.appendChild(operContainer);
 
 // ----- Click Events For Operations ----- // 
 
+
 clrBtn.addEventListener("click", () => {
+    x = resultShell.textContent;
     resultShell.textContent = ''; 
+});
+
+plusBtn.addEventListener("click", () => {
+    resultShell.textContent = '';
 }); 
+
+subBtn.addEventListener("click", () => {
+    x = resultShell.textContent;
+    resultShell.textContent = '-'; 
+}); 
+
+multBtn.addEventListener("click", () => {
+    x = resultShell.textContent;
+    resultShell.textContent = 'x'; 
+}); 
+
+divBtn.addEventListener("click", () => {
+    x = resultShell.textContent;
+    resultShell.textContent = '/'; 
+});  
+
+y = resultShell.textContent;
 
 // ----- Add, Subtract, Multiply, Divide Functions ----- // 
 
