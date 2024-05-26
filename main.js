@@ -27,6 +27,9 @@ const mapDigitArr = digitArr.map((num) => {
     num.style.justifyContent = "space-around";
     numShell.appendChild(num)}); 
 
+
+const opArr = ["+", "-", "x", "/", "c"];
+
 function makeNumBtns(numBtns) {
     for (i = 0; i < numBtns; i++) {
         
@@ -48,14 +51,24 @@ function makeNumBtns(numBtns) {
 
         // ----- Click Event For Number Buttons ----- //
         numberBtn.addEventListener("click", () => {
-            resultShell.textContent = resultShell.textContent + `${numberBtn.textContent}`;
+            displayShell.textContent = displayShell.textContent + `${numberBtn.textContent}`;
+            subDisplayShell.textContent = `${displayShell.textContent}`;
+        
+            function stringDeleter() {
+                for (operand in opArr) {
+                    if (operand in displayShell.textContent) {
+                        let z = displayShell.textContent.indexOf(operand)
+                        let y = displayShell.textContent.slice(z + 2); 
+                    }
+                } return y;
+            } stringDeleter();
+        
         })
     }
 } makeNumBtns(10)
 
 // ----- Buttons For Operations & Equal ----- // 
 
-let opArr = ["+", "-", "x", "/", "c"];
 
 // Is there a way to use an object to assign text content to each button? // 
 
@@ -90,7 +103,9 @@ clrBtn.addEventListener("click", () => {
 });
 
 plusBtn.addEventListener("click", () => {
-    resultShell.textContent = '';
+    x = displayShell.textContent;
+    displayShell.textContent = displayShell.textContent + ' + ';
+    subDisplayShell.textContent = subDisplayShell.textContent + ' + '; 
 }); 
 
 subBtn.addEventListener("click", () => {
@@ -108,7 +123,7 @@ divBtn.addEventListener("click", () => {
     resultShell.textContent = '/'; 
 });  
 
-y = resultShell.textContent;
+
 
 // ----- Add, Subtract, Multiply, Divide Functions ----- // 
 
