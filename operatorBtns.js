@@ -32,10 +32,10 @@ numShell.appendChild(operContainer);
 // ----- Click Events For Operations ----- // 
 let y; 
 
-//clrBtn.addEventListener("click", () => {
-  //  x = resultShell.textContent;
-  //  resultShell.textContent = ''; 
-//});
+clrBtn.addEventListener("click", () => {
+    displayShell.textContent = ''; 
+    subDisplayShell.textContent = '';
+});
 
 plusBtn.addEventListener("click", () => {
     valueDict.x = `${displayShell.textContent}`
