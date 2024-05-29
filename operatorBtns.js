@@ -47,25 +47,31 @@ plusBtn.addEventListener("click", () => {
 
 
 subBtn.addEventListener("click", () => {
-    x = resultShell.textContent;
-    resultShell.textContent = '-'; 
+    valueDict.x = `${displayShell.textContent}`
+    valueDict.op = `-`;
+    displayShell.textContent = '';
+    subDisplayShell.textContent = subDisplayShell.textContent + ' - '; 
+    console.log(valueDict);
 }); 
 
 multBtn.addEventListener("click", () => {
-    x = resultShell.textContent;
-    resultShell.textContent = 'x'; 
+    valueDict.x = `${displayShell.textContent}`
+    valueDict.op = `x`;
+    displayShell.textContent = '';
+    subDisplayShell.textContent = subDisplayShell.textContent + ' x '; 
+    console.log(valueDict);
 }); 
 
 divBtn.addEventListener("click", () => {
-    x = resultShell.textContent;
-    resultShell.textContent = '/'; 
+    valueDict.x = `${displayShell.textContent}`
+    valueDict.op = `/`;
+    displayShell.textContent = '';
+    subDisplayShell.textContent = subDisplayShell.textContent + ' / '; 
+    console.log(valueDict);
 });  
 
 equalBtn.addEventListener("click", () => {
     valueDict.y = `${displayShell.textContent}`
-    let result; 
-    if (valueDict.op == '+') {
-        result = addNum(parseInt(valueDict.x), parseInt(valueDict.y))
-        resultShell.textContent = `${result}`;
-    }
+    operate(valueDict.op, parseFloat(valueDict.x), parseFloat(valueDict.y))
+
 })
