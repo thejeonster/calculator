@@ -19,7 +19,6 @@ const clrBtn = document.createElement("button");
 const equalBtn = document.createElement("button"); 
 const opBtnArr = [plusBtn, subBtn, multBtn, divBtn, clrBtn, equalBtn];
 
-
 const mapOpBtn = opBtnArr.map((oper) => {
     for (i = 0; i < opBtnArr.length; i++) {
         opBtnArr[i].style.height = "55px";
@@ -30,7 +29,6 @@ const mapOpBtn = opBtnArr.map((oper) => {
 }) 
 
 numShell.appendChild(operContainer);
-
 
 // ----- Click Events For Operations ----- // 
 
