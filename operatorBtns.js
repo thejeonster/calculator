@@ -1,7 +1,10 @@
 // ----- Buttons For Operations & Equal ----- // 
 
 let valueDict = {
-}
+    x: '',
+    y: '',
+    op: '',             
+};
 
 // Is there a way to use an object to assign text content to each button? // 
 
@@ -74,6 +77,12 @@ equalBtn.addEventListener("click", () => {
     valueDict.y = `${displayShell.textContent}`
     if (valueDict.y == '0') {
         alert("Why are you dividing by zero?")
+        return displayShell.textContent = '';
+    } else if (valueDict.x == '') {
+        alert("You need to input a number.")
+        return displayShell.textContent = '';
+    } else if (valueDict.y == '') {
+        alert("You need to input a number.")
         return displayShell.textContent = '';
     }
     operate(valueDict.op, parseFloat(valueDict.x), parseFloat(valueDict.y))
