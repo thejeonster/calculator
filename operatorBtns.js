@@ -72,6 +72,10 @@ divBtn.addEventListener("click", () => {
 
 equalBtn.addEventListener("click", () => {
     valueDict.y = `${displayShell.textContent}`
+    if (valueDict.y == '0') {
+        alert("Why are you dividing by zero?")
+        return displayShell.textContent = '';
+    }
     operate(valueDict.op, parseFloat(valueDict.x), parseFloat(valueDict.y))
 
 })
