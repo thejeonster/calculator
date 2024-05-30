@@ -1,12 +1,9 @@
-
-
 document.body.style.cssText = `
     display: flex;
     flexDirection = "column"; 
     height = 100%;
     alignItems = "center";
     justifyContent = "center";`
-
 
 // ----- The Calculator's Skeleton ----- // 
 
@@ -34,7 +31,6 @@ resultShell.style.marginLeft = "auto";
 resultShell.style.marginRight = "auto";
 resultShell.style.marginTop = "30px";
 resultShell.style.border = "1px solid black"; 
-
 
 calcShell.appendChild(resultShell);
 

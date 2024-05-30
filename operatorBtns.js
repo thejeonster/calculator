@@ -6,7 +6,7 @@ let valueDict = {
     op: '',             
 };
 
-// Is there a way to use an object to assign text content to each button? // 
+// ----- Button Elements For Operations ----- // 
 
 const operContainer = document.createElement("div");
 operContainer.style.order = "5";
@@ -33,6 +33,7 @@ numShell.appendChild(operContainer);
 
 
 // ----- Click Events For Operations ----- // 
+
 let y; 
 
 clrBtn.addEventListener("click", () => {
@@ -47,7 +48,6 @@ plusBtn.addEventListener("click", () => {
     subDisplayShell.textContent = subDisplayShell.textContent + ' + '; 
     console.log(valueDict);
 }); 
-
 
 subBtn.addEventListener("click", () => {
     valueDict.x = `${displayShell.textContent}`
@@ -86,5 +86,4 @@ equalBtn.addEventListener("click", () => {
         return displayShell.textContent = '';
     }
     operate(valueDict.op, parseFloat(valueDict.x), parseFloat(valueDict.y))
-
-})
+});
