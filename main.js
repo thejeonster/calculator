@@ -21,12 +21,10 @@ oneToThree.style.order = "3";
 const zero = document.createElement("div");
 zero.style.order = "4";
 
-
 const digitArr = [oneToThree, fourToSix, sevenToNine, zero];
 const mapDigitArr = digitArr.map((num) => {
     num.style.justifyContent = "space-around";
     numShell.appendChild(num)}); 
-
 
 const opArr = ["+", "-", "x", "/", "c", '='];
 
@@ -36,6 +34,7 @@ function makeNumBtns(numBtns) {
         let numberBtn = document.createElement("button");
         numberBtn.style.height = "55px";
         numberBtn.style.width = "55px";
+        numberBtn.style.backgroundColor = "#FFFFCC";
         numberBtn.textContent = `${i}`; 
 
         if (1 <= i && i <= 3) {
