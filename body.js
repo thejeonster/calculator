@@ -1,14 +1,14 @@
-document.body.style.cssText = `
-    display: flex;
-    flexDirection = "column"; 
-    height = 100%;
-    alignItems = "center";
-    justifyContent = "center";`
+document.body.style.backgroundColor = "#E5FFFF";
+document.body.style.display = "flex";
+document.body.style.flexDirection = "column"; 
+document.body.style.alignItems = "center";
+document.body.style.justifyContent = "center";
 
 // ----- The Calculator's Skeleton ----- // 
 
 const calcShell = document.createElement("div");
 calcShell.classList.add("calcShell");
+calcShell.style.borderRadius = "10px";
 calcShell.style.display = "flex";
 calcShell.style.flexDirection = "column";
 calcShell.style.height = "500px";
@@ -24,6 +24,7 @@ let x;
 const resultShell = document.createElement("div");
 resultShell.classList.add("resultShell");
 resultShell.style.display = "flex";
+resultShell.style.backgroundColor = "white";
 resultShell.style.flexDirection = "column";
 resultShell.style.height = "75px";
 resultShell.style.width = "240px";

@@ -9,6 +9,10 @@ let valueDict = {
 // ----- Button Elements For Operations ----- // 
 
 const operContainer = document.createElement("div");
+operContainer.classList.add("operatorContainer");
+operContainer.style.display = "flex";
+operContainer.style.flexDirection = "column";
+operContainer.style.height = "375px";
 operContainer.style.order = "5";
 
 const plusBtn = document.createElement("button");
@@ -24,6 +28,7 @@ const mapOpBtn = opBtnArr.map((oper) => {
         opBtnArr[i].style.height = "55px";
         opBtnArr[i].style.width = "55px";
         opBtnArr[i].style.backgroundColor = "#FFFFCC";
+        opBtnArr[i].style.borderRadius = "10px";
         opBtnArr[i].textContent = `${opArr[i]}`;
         operContainer.appendChild(opBtnArr[i]); 
     }

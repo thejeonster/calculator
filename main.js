@@ -7,10 +7,18 @@ calcShell.appendChild(numSpacer);
 const numShell = document.createElement("div"); 
 numShell.classList.add("numShell");
 numShell.style.display = "flex"; 
-numShell.style.flexDirection = "column";
+numShell.style.flexDirection = "row";
 numShell.style.justifyContent = "space-around";
 numShell.style.height = "200px";
 calcShell.appendChild(numShell); 
+
+const digitShell = document.createElement("div"); 
+digitShell.classList.add("numShell");
+digitShell.style.display = "flex"; 
+digitShell.style.flexDirection = "column";
+digitShell.style.justifyContent = "space-around";
+digitShell.style.height = "200px";
+numShell.appendChild(digitShell); 
 
 const sevenToNine = document.createElement("div");
 sevenToNine.style.order = "1";
@@ -24,7 +32,7 @@ zero.style.order = "4";
 const digitArr = [oneToThree, fourToSix, sevenToNine, zero];
 const mapDigitArr = digitArr.map((num) => {
     num.style.justifyContent = "space-around";
-    numShell.appendChild(num)}); 
+    digitShell.appendChild(num)}); 
 
 const opArr = ["+", "-", "x", "/", "c", '='];
 
@@ -35,6 +43,7 @@ function makeNumBtns(numBtns) {
         numberBtn.style.height = "55px";
         numberBtn.style.width = "55px";
         numberBtn.style.backgroundColor = "#FFFFCC";
+        numberBtn.style.borderRadius = "10px";
         numberBtn.textContent = `${i}`; 
 
         if (1 <= i && i <= 3) {
@@ -46,10 +55,7 @@ function makeNumBtns(numBtns) {
         } else if (7 <= i && i <= 9) {
             numberBtn.classList.add("sevenNine");
             sevenToNine.appendChild(numberBtn); 
-        } else if (i = 0); {
-            numberBtn.classList.add("zero");
-            zero.appendChild(numberBtn);
-        }
+        } 
 
         // ----- Click Event For Number Buttons ----- //
         numberBtn.addEventListener("click", () => {
