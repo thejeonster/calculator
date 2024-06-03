@@ -48,7 +48,12 @@ clrBtn.addEventListener("click", () => {
 plusBtn.addEventListener("click", () => {
     if (valueDict.x != '') {
         valueDict.y = `${displayShell.textContent}`;
-        operate(valueDict.op, parseFloat(valueDict.x), parseFloat(valueDict.y));
+        let newVal = operate(valueDict.op, parseFloat(valueDict.x), parseFloat(valueDict.y));
+        valueDict = {
+            x: '',
+            y: '',
+            op: '',             
+        };
     } else {
     valueDict.x = `${displayShell.textContent}`
     valueDict.op = `+`;
@@ -58,27 +63,54 @@ plusBtn.addEventListener("click", () => {
 }); 
 
 subBtn.addEventListener("click", () => {
+    if (valueDict.x != '') {
+        valueDict.y = `${displayShell.textContent}`;
+        let newVal = operate(valueDict.op, parseFloat(valueDict.x), parseFloat(valueDict.y));
+        valueDict = {
+            x: '',
+            y: '',
+            op: '',             
+        };
+    } else { 
     valueDict.x = `${displayShell.textContent}`
     valueDict.op = `-`;
     displayShell.textContent = '';
     subDisplayShell.textContent = subDisplayShell.textContent + ' - '; 
-    console.log(valueDict);
+    };
 }); 
 
 multBtn.addEventListener("click", () => {
+    if (valueDict.x != '') {
+        valueDict.y = `${displayShell.textContent}`;
+        let newVal = operate(valueDict.op, parseFloat(valueDict.x), parseFloat(valueDict.y));
+        valueDict = {
+            x: '',
+            y: '',
+            op: '',             
+        };
+    } else { 
     valueDict.x = `${displayShell.textContent}`
     valueDict.op = `x`;
     displayShell.textContent = '';
     subDisplayShell.textContent = subDisplayShell.textContent + ' x '; 
-    console.log(valueDict);
+    };
 }); 
 
 divBtn.addEventListener("click", () => {
+    if (valueDict.x != '') {
+        valueDict.y = `${displayShell.textContent}`;
+        let newVal = operate(valueDict.op, parseFloat(valueDict.x), parseFloat(valueDict.y));
+        valueDict = {
+            x: '',
+            y: '',
+            op: '',             
+        };
+    } else { 
     valueDict.x = `${displayShell.textContent}`
     valueDict.op = `/`;
     displayShell.textContent = '';
     subDisplayShell.textContent = subDisplayShell.textContent + ' / '; 
-    console.log(valueDict);
+    };
 });  
 
 equalBtn.addEventListener("click", () => {
